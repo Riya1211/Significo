@@ -1,0 +1,129 @@
+@font-face{
+    font-family: 'Pp_Neue_Machina_plain_light';
+    font-family: 'Pp_Neue_Machina_Inktrap';
+    font-family: 'Satoshi_Variable';
+    src: url('./Fonts/659DBDFD5A080BE8D348316E_PP\ NEUE\ MACHINA\ INKTRAP\ MEDIUM.woff2');
+    src: url('./Fonts/659DBDFD5A080BE8D348316F_PPNEUEMACHINA_\ LIGHT.woff2');
+    src: url('./Fonts/659DBDFD5A080BE8D3483173_SATOSHI-VARIABLE.woff2');
+}
+
+:root{
+    --salmon: #ef9d71;
+    --black: #000;
+    --white: #fff;
+    --cyan: #AEDEE0;
+    --dsalmon: rgb(80, 41, 37);
+    --dcyan: #1f2f32;
+    --footer:#f5f19c;
+}
+
+/* Animation */
+body{
+    transition: background-color ease-out .5s;
+}
+.vdodiv{
+    clip-path: circle(var(--clip) at 50% 50%) ;
+}
+
+/* Reusable class for left to right border removal effect */
+.border-remove-left-right {
+    position: relative; /* Ensure proper positioning for the pseudo-element */
+}
+
+/* Pseudo-element for the border */
+.border-remove-left-right::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px; /* Border height */
+    background-color: white; /* Adjust to match background color */
+    z-index: 1; /* Ensure the pseudo-element is above the border */
+    transition: width 0.3s ease; /* Add transition effect */
+}
+
+/* Hover effect to remove border */
+.border-remove-left-right:hover::before {
+    width: 0; /* Decrease width to hide the border */
+}
+
+/* Additional hover effect to change text color */
+.footer-color-change:hover {
+    color: var(--footer); /* Change text color on hover */
+    transition: color ease-out .5s;
+}
+
+/* For Stagger Effect */
+.textMove{
+    position: relative;
+}
+.waveText:nth-child(1){
+    top: 0;
+}
+.waveText{
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+/* For Stagger Effect on Btn */
+.textMoveBtn{
+    position: relative;
+}
+.waveTextBtn:nth-child(1){
+    top: 0;
+}
+.waveTextBtn{
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+
+/* CSS */
+*::selection{
+    background-color: var(--salmon);
+}
+
+body[theme="black"]{
+    background-color: var(--black);
+}
+body[theme="black"] .section{
+    color: var(--white);
+}
+
+body[theme="cyan"]{
+    background-color: var(--cyan);
+}
+body[theme="cyan"] .section{
+    color: var(--dcyan);
+}
+
+body[theme="salmon"]{
+    background-color: var(--salmon);
+}
+body[theme="salmon"] .section{
+    color: var(--dsalmon);
+}
+
+body[theme="white"]{
+    background-color: var(--white);
+}
+body[theme="white"] .section{
+    color: var(--black);
+}
+
+/* Sticky Nav */
+
+.scroll-down{
+    opacity: 0;
+    transition: opacity ease-out .3s;
+    /* transform: translate3d(0, -118%, 0); */
+}
+
+.scroll-up{
+    /* border-bottom: 5px solid red; */
+    opacity: 1;
+    transition: opacity ease-in .3s;
+}
