@@ -1,3 +1,8 @@
+/* Tailwind utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face{
     font-family: 'Pp_Neue_Machina_plain_light';
     font-family: 'Pp_Neue_Machina_Inktrap';
