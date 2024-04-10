@@ -3,7 +3,7 @@ function loaderAnimation(){
     // To disable scroll
     gsap.set("body, html", {overflow: "hidden", height: "100vh"});
     tl.to(".loader_circle", {
-        duration: 7,
+        duration: 5,
         rotation: 360,
         transformOrigin: "50% 50%",
         // repeat: 1, // Repeat infinitely
