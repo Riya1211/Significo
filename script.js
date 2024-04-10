@@ -195,13 +195,33 @@ function themeChange(){
             end: "bottom 50%",
             // markers: true,
             onEnter: function(){
-               document.body.setAttribute("theme", e.dataset.color);
+               const newTheme = e.dataset.color;
+               document.body.setAttribute("theme", newTheme);
+            //    document.body.setAttribute("theme", e.dataset.color);
+               changeFavicon(newTheme);
             },
             onEnterBack: function(){
-                document.body.setAttribute("theme", e.dataset.color);
+                // document.body.setAttribute("theme", e.dataset.color);
+                const newTheme = e.dataset.color;
+                document.body.setAttribute("theme", newTheme);
+                changeFavicon(newTheme);
             }
         })
     })
+    function changeFavicon(theme) {
+        const link = document.querySelector('link[rel="shortcut icon"]');
+        if (theme === 'black') {
+            link.href = './favicon/black.png';
+        } else if (theme === 'cyan') {
+            link.href = './favicon/cyan.png';
+        } else if (theme === 'salmon') {
+            link.href = './favicon/salmon.png';
+        } else if (theme === 'white') {
+            link.href = './favicon/white.png';
+        } else{
+            link.href = './favicon/black.png';
+        }
+    }
 }
 function rotateAnimation(){
     gsap.to(".rotateImg", {
